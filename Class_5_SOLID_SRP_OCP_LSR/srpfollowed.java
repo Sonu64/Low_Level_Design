@@ -48,11 +48,8 @@ import java.util.List;
     }
 
     class saveToDB {
-        private shoppingCart cart;
-        public saveToDB(shoppingCart cart) {
-            this.cart = cart;
-        }
-        public void save() {
+        // No need for constructors, just pass shoppingCart object to .save() method
+        public void save(shoppingCart cart) {
             System.out.println("\n\nSaving Cart to Database...");
         }
     }
@@ -67,11 +64,11 @@ public class srpfollowed {
         // Creating Empty Cart and Printing Invoice
         shoppingCart myCart = new shoppingCart();
         invoicePrinter myInvoicePrinter = new invoicePrinter(myCart);
-        saveToDB myDBsaver = new saveToDB(myCart);
+        saveToDB myDBsaver = new saveToDB();
         myInvoicePrinter.printInvoice();
         myCart.addProduct(p1);
         myCart.addProduct(p2);
         myInvoicePrinter.printInvoice();
-        myDBsaver.save();
+        myDBsaver.save(myCart);
     }
 }
