@@ -23,7 +23,7 @@ class AdminUser extends User {
     }
 }
 
-public class PreConditions {
+public class lspGuidelines_methodRule_precondition {
     public static void main(String[] args) {
         User normalUser = new User();
         User user = new AdminUser();
